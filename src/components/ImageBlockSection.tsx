@@ -1,4 +1,3 @@
-import { useParallax } from "@/hooks/useParallax";
 import portrait1 from "@/assets/portrait-1.png";
 import portrait2 from "@/assets/portrait-2.png";
 
@@ -10,8 +9,6 @@ interface ImageBlockProps {
 }
 
 const ImageBlock = ({ image, alt, text, textPosition = "center" }: ImageBlockProps) => {
-  const parallaxOffset = useParallax(0.2);
-  
   const textAlignClass = {
     left: "text-left items-start",
     center: "text-center items-center",
@@ -19,12 +16,11 @@ const ImageBlock = ({ image, alt, text, textPosition = "center" }: ImageBlockPro
   }[textPosition];
 
   return (
-    <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
+    <section className="relative w-full h-[85vh] min-h-[600px] overflow-hidden">
       <img
         src={image}
         alt={alt}
-        className="absolute inset-0 w-full h-[120%] object-cover object-top"
-        style={{ transform: `translateY(${parallaxOffset * 0.2}px)` }}
+        className="absolute inset-0 w-full h-full object-cover object-top"
       />
       <div className="absolute inset-0 bg-background-dark/30" />
       <div className="relative z-10 h-full flex items-center justify-center">
