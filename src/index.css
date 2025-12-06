@@ -90,7 +90,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-outfit antialiased;
+    @apply bg-background text-foreground font-nunito antialiased;
   }
 }
 
