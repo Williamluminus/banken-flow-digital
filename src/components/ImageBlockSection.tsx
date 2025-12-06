@@ -34,23 +34,22 @@ const ImageBlock = ({ image, alt, text, textPosition = "center" }: ImageBlockPro
   );
 };
 
-const ImageBlockSection = () => {
-  return (
-    <>
-      <ImageBlock
-        image={portrait1}
-        alt="Empresária confiante - parceria de negócios"
-        text="Visão estratégica para o crescimento do seu negócio."
-        textPosition="left"
-      />
-      <ImageBlock
-        image={portrait2}
-        alt="Profissional de negócios - liderança e confiança"
-        text="Liderança que inspira resultados."
-        textPosition="right"
-      />
-    </>
-  );
-};
+export const ImageBlockFirst = () => (
+  <ImageBlock
+    image={portrait1}
+    alt="Empresária confiante - parceria de negócios"
+    text="Livre de Burocracia Bancária."
+    textPosition="left"
+  />
+);
 
-export default ImageBlockSection;
+export const ImageBlockSecond = () => (
+  <ImageBlock
+    image={portrait2}
+    alt="Profissional de negócios - liderança e confiança"
+    text="O Fôlego Financeiro da Sua Empresa Chega Hoje."
+    textPosition="right"
+  />
+);
+
+export default ImageBlock;

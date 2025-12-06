@@ -11,9 +11,30 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 
+const formatPhone = (value: string) => {
+  const numbers = value.replace(/\D/g, "");
+  
+  if (numbers.length <= 2) {
+    return numbers.length > 0 ? `(${numbers}` : "";
+  }
+  if (numbers.length <= 7) {
+    return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
+  }
+  if (numbers.length <= 11) {
+    return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7)}`;
+  }
+  return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7, 11)}`;
+};
+
 const ContactForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [phone, setPhone] = useState("");
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatPhone(e.target.value);
+    setPhone(formatted);
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,6 +49,7 @@ const ContactForm = () => {
     });
 
     setIsSubmitting(false);
+    setPhone("");
     (e.target as HTMLFormElement).reset();
   };
 
@@ -86,6 +108,8 @@ const ContactForm = () => {
             type="tel"
             required
             placeholder="(11) 99999-9999"
+            value={phone}
+            onChange={handlePhoneChange}
             className="bg-background border-border rounded-xl h-12"
           />
         </div>

@@ -1,13 +1,14 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, Mail, MapPin } from "lucide-react";
 import { useParallax } from "@/hooks/useParallax";
 
 const Contato = () => {
-  const whatsappNumber = "5511942083432";
-  const whatsappMessage = encodeURIComponent("Olá! Gostaria de saber mais sobre as soluções da Banken.");
+  const whatsappNumber = "5511990054114";
+  const whatsappMessage = encodeURIComponent("Tenho interesse em conhecer a Banken.");
   const parallaxOffset = useParallax(0.2);
 
   return (
@@ -123,7 +124,8 @@ const Contato = () => {
                           Sede
                         </h3>
                         <p className="font-nunito text-foreground-muted text-sm">
-                          Venha tomar um café conosco.
+                          Av. Cauaxi, 293, 28º andar, Alphaville<br />
+                          Barueri SP - CEP 06454-020
                         </p>
                       </div>
                     </div>
@@ -135,6 +137,7 @@ const Contato = () => {
         </section>
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
