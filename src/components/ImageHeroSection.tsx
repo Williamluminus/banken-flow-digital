@@ -1,12 +1,16 @@
+import { useParallax } from "@/hooks/useParallax";
 import heroImage from "@/assets/hero-handshake.jpg";
 
 const ImageHeroSection = () => {
+  const parallaxOffset = useParallax(0.3);
+  
   return (
     <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
       <img
         src={heroImage}
         alt="Parceria empresarial - aperto de mãos simbolizando confiança"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-[120%] object-cover"
+        style={{ transform: `translateY(${parallaxOffset * -0.2}px)` }}
       />
       <div className="absolute inset-0 bg-background-dark/40" />
       <div className="relative z-10 h-full flex items-center justify-center">
