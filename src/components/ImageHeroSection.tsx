@@ -9,8 +9,8 @@ const ImageHeroSection = () => {
       <img
         src={heroImage}
         alt="Parceria empresarial - aperto de mãos simbolizando confiança"
-        className="absolute inset-0 w-full h-[120%] object-cover"
-        style={{ transform: `translateY(${parallaxOffset * -0.2}px)` }}
+        className="absolute inset-0 w-full h-[140%] object-cover -top-[20%]"
+        style={{ transform: `translateY(${parallaxOffset * 0.4}px)` }}
       />
       <div className="absolute inset-0 bg-background-dark/40" />
       <div className="relative z-10 h-full flex items-center justify-center">
