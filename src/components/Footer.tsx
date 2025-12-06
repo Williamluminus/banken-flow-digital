@@ -4,6 +4,7 @@ const Footer = () => {
   const links = [
     { name: "Home", href: "/" },
     { name: "Soluções", href: "/#solucoes" },
+    { name: "Sobre", href: "/sobre" },
     { name: "Contato", href: "/contato" },
     { name: "Privacidade", href: "#" },
   ];
@@ -11,23 +12,30 @@ const Footer = () => {
   return (
     <footer className="bg-background-dark py-12 lg:py-16">
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 mb-8">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 mb-8">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="flex items-center gap-1">
-              <div className="flex flex-col gap-[3px]">
-                <div className="w-5 h-[3px] bg-primary rounded-full" />
-                <div className="w-4 h-[3px] bg-primary rounded-full" />
-                <div className="w-3 h-[3px] bg-primary rounded-full" />
+          <div className="flex flex-col gap-4">
+            <Link to="/" className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
+                <div className="flex flex-col gap-[3px]">
+                  <div className="w-5 h-[3px] bg-primary rounded-full" />
+                  <div className="w-4 h-[3px] bg-primary rounded-full" />
+                  <div className="w-3 h-[3px] bg-primary rounded-full" />
+                </div>
               </div>
+              <span className="text-foreground-light font-merriweather font-bold text-xl tracking-tight">
+                Banken
+              </span>
+            </Link>
+            <div className="font-nunito text-foreground-light/50 text-sm space-y-1">
+              <p>(11) 4208-3432</p>
+              <p>Av. Cauaxi, 293, 28º andar, Alphaville</p>
+              <p>Barueri SP - CEP 06454-020</p>
             </div>
-            <span className="text-foreground-light font-merriweather font-bold text-xl tracking-tight">
-              Banken
-            </span>
-          </Link>
+          </div>
 
           {/* Links */}
-          <nav className="flex flex-wrap justify-center gap-6">
+          <nav className="flex flex-wrap gap-6">
             {links.map((link) => (
               <Link
                 key={link.name}

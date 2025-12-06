@@ -1,23 +1,50 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Soluções", href: "/#solucoes" },
     { name: "Como Funciona", href: "/#como-funciona" },
-    { name: "Sobre", href: "/#sobre" },
+    { name: "Sobre", href: "/sobre" },
     { name: "Contato", href: "/contato" },
   ];
 
   const isActive = (href: string) => {
     if (href === "/") return location.pathname === "/";
-    return location.pathname === href || location.hash === href.replace("/", "");
+    if (href.startsWith("/#")) return false;
+    return location.pathname === href;
+  };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("/#")) {
+      e.preventDefault();
+      const sectionId = href.replace("/#", "");
+      
+      if (location.pathname !== "/") {
+        navigate("/");
+        setTimeout(() => {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      } else {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+      setIsMenuOpen(false);
+    } else {
+      setIsMenuOpen(false);
+    }
   };
 
   return (
@@ -44,6 +71,7 @@ const Header = () => {
               <Link
                 key={link.name}
                 to={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className={`font-nunito text-sm font-medium transition-colors ${
                   isActive(link.href)
                     ? "text-foreground-light"
@@ -81,8 +109,8 @@ const Header = () => {
                 <Link
                   key={link.name}
                   to={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="font-nunito text-foreground-light/70 hover:text-foreground-light text-base font-medium"
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
                 </Link>
