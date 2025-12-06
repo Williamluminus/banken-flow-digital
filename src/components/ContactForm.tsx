@@ -1,0 +1,142 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
+
+const ContactForm = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Simulate form submission
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    toast({
+      title: "Mensagem enviada!",
+      description: "Nossa equipe entrará em contato em breve.",
+    });
+
+    setIsSubmitting(false);
+    (e.target as HTMLFormElement).reset();
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <Label htmlFor="name" className="text-foreground">
+            Nome Completo
+          </Label>
+          <Input
+            id="name"
+            name="name"
+            required
+            placeholder="Seu nome"
+            className="bg-background border-border"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="company" className="text-foreground">
+            Nome da Empresa
+          </Label>
+          <Input
+            id="company"
+            name="company"
+            required
+            placeholder="Sua empresa"
+            className="bg-background border-border"
+          />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <Label htmlFor="email" className="text-foreground">
+            E-mail Corporativo
+          </Label>
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            required
+            placeholder="email@empresa.com"
+            className="bg-background border-border"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="phone" className="text-foreground">
+            Telefone / WhatsApp
+          </Label>
+          <Input
+            id="phone"
+            name="phone"
+            type="tel"
+            required
+            placeholder="(11) 99999-9999"
+            className="bg-background border-border"
+          />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <Label htmlFor="revenue" className="text-foreground">
+            Faturamento Médio Mensal
+          </Label>
+          <Select name="revenue" required>
+            <SelectTrigger className="bg-background border-border">
+              <SelectValue placeholder="Selecione" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="ate-50k">Até R$ 50 mil</SelectItem>
+              <SelectItem value="50k-200k">R$ 50 mil a R$ 200 mil</SelectItem>
+              <SelectItem value="acima-200k">Acima de R$ 200 mil</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="service" className="text-foreground">
+            Como podemos ajudar?
+          </Label>
+          <Select name="service" required>
+            <SelectTrigger className="bg-background border-border">
+              <SelectValue placeholder="Selecione" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="antecipacao">Antecipação de Notas</SelectItem>
+              <SelectItem value="gestao">Gestão Financeira</SelectItem>
+              <SelectItem value="parceria">Parceria</SelectItem>
+              <SelectItem value="outros">Outros</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+
+      <Button
+        type="submit"
+        variant="hero"
+        size="xl"
+        className="w-full"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? "Enviando..." : "Falar com Especialista"}
+      </Button>
+    </form>
+  );
+};
+
+export default ContactForm;
