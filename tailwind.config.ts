@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        outfit: ["Outfit", "sans-serif"],
-        sora: ["Sora", "sans-serif"],
+        merriweather: ["Merriweather", "serif"],
+        nunito: ["Nunito Sans", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

@@ -13,12 +13,12 @@ const HeroSection = () => {
         style={{ transform: `translateY(${parallaxOffset * 0.2}px)` }}
       >
         <div className="max-w-4xl">
-          <h1 className="font-sora text-foreground-light text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-8 animate-fade-up">
+          <h1 className="font-merriweather text-foreground-light text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 animate-fade-up">
             Transforme suas vendas a prazo em{" "}
             <span className="text-primary">capital de giro</span> à vista.
           </h1>
           
-          <p className="text-foreground-light/60 text-lg md:text-xl leading-relaxed mb-12 max-w-2xl animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <p className="font-nunito text-foreground-light/60 text-lg md:text-xl leading-relaxed mb-12 max-w-2xl animate-fade-up" style={{ animationDelay: "0.1s" }}>
             Antecipação de recebíveis, gestão financeira e crédito estruturado 
             para empresas que não podem parar.
           </p>

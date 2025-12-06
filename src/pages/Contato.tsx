@@ -21,10 +21,10 @@ const Contato = () => {
             style={{ transform: `translateY(${parallaxOffset * 0.15}px)` }}
           >
             <div className="max-w-2xl">
-              <h1 className="font-sora text-foreground-light text-4xl md:text-5xl font-semibold mb-6">
+              <h1 className="font-merriweather text-foreground-light text-4xl md:text-5xl font-bold mb-6">
                 Vamos acelerar o seu negócio?
               </h1>
-              <p className="text-foreground-light/60 text-lg leading-relaxed">
+              <p className="font-nunito text-foreground-light/60 text-lg leading-relaxed">
                 Nossa equipe está pronta para analisar sua necessidade 
                 e desenhar a melhor operação para sua empresa.
               </p>
@@ -38,7 +38,7 @@ const Contato = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
               {/* Form */}
               <div>
-                <h2 className="font-sora text-foreground text-2xl font-semibold mb-8">
+                <h2 className="font-merriweather text-foreground text-2xl font-bold mb-8">
                   Preencha o formulário
                 </h2>
                 <ContactForm />
@@ -46,10 +46,10 @@ const Contato = () => {
 
               {/* Direct Channels */}
               <div>
-                <h2 className="font-sora text-foreground text-2xl font-semibold mb-4">
+                <h2 className="font-merriweather text-foreground text-2xl font-bold mb-4">
                   Atendimento imediato
                 </h2>
-                <p className="text-foreground-muted mb-8 text-sm">
+                <p className="font-nunito text-foreground-muted mb-8 text-sm">
                   Escolha o canal mais rápido para você:
                 </p>
 
@@ -57,14 +57,12 @@ const Contato = () => {
                   {/* WhatsApp */}
                   <div className="p-6 rounded-3xl border border-border bg-background">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <MessageCircle className="w-6 h-6 text-primary" />
-                      </div>
+                      <MessageCircle className="w-8 h-8 text-primary flex-shrink-0" strokeWidth={1} />
                       <div className="flex-1">
-                        <h3 className="font-sora text-foreground font-semibold mb-1">
+                        <h3 className="font-merriweather text-foreground font-bold mb-1">
                           WhatsApp
                         </h3>
-                        <p className="text-foreground-muted text-xs mb-4">
+                        <p className="font-nunito text-foreground-muted text-xs mb-4">
                           Resposta em até 10 minutos
                         </p>
                         <a
@@ -83,16 +81,14 @@ const Contato = () => {
                   {/* Phone */}
                   <div className="p-6 rounded-3xl border border-border bg-background">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Phone className="w-6 h-6 text-primary" />
-                      </div>
+                      <Phone className="w-8 h-8 text-primary flex-shrink-0" strokeWidth={1} />
                       <div>
-                        <h3 className="font-sora text-foreground font-semibold mb-1">
+                        <h3 className="font-merriweather text-foreground font-bold mb-1">
                           Telefone
                         </h3>
                         <a
                           href="tel:+551142083432"
-                          className="text-foreground-muted text-sm hover:text-primary transition-colors"
+                          className="font-nunito text-foreground-muted text-sm hover:text-primary transition-colors"
                         >
                           (11) 4208-3432
                         </a>
@@ -103,16 +99,14 @@ const Contato = () => {
                   {/* Email */}
                   <div className="p-6 rounded-3xl border border-border bg-background">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Mail className="w-6 h-6 text-primary" />
-                      </div>
+                      <Mail className="w-8 h-8 text-primary flex-shrink-0" strokeWidth={1} />
                       <div>
-                        <h3 className="font-sora text-foreground font-semibold mb-1">
+                        <h3 className="font-merriweather text-foreground font-bold mb-1">
                           E-mail
                         </h3>
                         <a
                           href="mailto:contato@banken.com.br"
-                          className="text-foreground-muted text-sm hover:text-primary transition-colors"
+                          className="font-nunito text-foreground-muted text-sm hover:text-primary transition-colors"
                         >
                           contato@banken.com.br
                         </a>
@@ -123,14 +117,12 @@ const Contato = () => {
                   {/* Address */}
                   <div className="p-6 rounded-3xl border border-border bg-background">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-6 h-6 text-primary" />
-                      </div>
+                      <MapPin className="w-8 h-8 text-primary flex-shrink-0" strokeWidth={1} />
                       <div>
-                        <h3 className="font-sora text-foreground font-semibold mb-1">
+                        <h3 className="font-merriweather text-foreground font-bold mb-1">
                           Sede
                         </h3>
-                        <p className="text-foreground-muted text-sm">
+                        <p className="font-nunito text-foreground-muted text-sm">
                           Venha tomar um café conosco.
                         </p>
                       </div>
