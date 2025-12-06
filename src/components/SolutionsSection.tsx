@@ -52,9 +52,7 @@ const SolutionsSection = () => {
               key={index}
               className="group p-8 rounded-3xl border border-border bg-background hover:bg-background-light-secondary transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                <solution.icon className="w-6 h-6 text-primary" />
-              </div>
+              <solution.icon className="w-8 h-8 text-primary mb-6" strokeWidth={1.5} />
               <h3 className="font-sora text-foreground text-xl font-semibold mb-3">
                 {solution.title}
               </h3>
