@@ -1,66 +1,72 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { UserPlus, FileUp, Zap } from "lucide-react";
+import { useParallax } from "@/hooks/useParallax";
 
 const HowItWorksSection = () => {
+  const parallaxOffset = useParallax(0.15);
+
   const steps = [
     {
       icon: UserPlus,
       number: "01",
-      title: "Cadastro Digital",
+      title: "Cadastro",
       description: "Preencha os dados da sua empresa.",
     },
     {
       icon: FileUp,
       number: "02",
-      title: "Envio de Títulos",
-      description: "Envie suas notas (XML) ou duplicatas para análise.",
+      title: "Envio",
+      description: "Envie suas notas ou duplicatas.",
     },
     {
       icon: Zap,
       number: "03",
       title: "Liberação",
-      description: "Aprovou? O dinheiro cai na conta via TED/PIX.",
+      description: "Dinheiro na conta via TED/PIX.",
     },
   ];
 
   return (
-    <section id="como-funciona" className="bg-background-dark-secondary py-24 lg:py-32">
-      <div className="container mx-auto px-6 lg:px-8">
-        <div className="max-w-3xl mb-16">
-          <h2 className="text-foreground-light text-3xl md:text-4xl font-bold mb-6">
-            Do cadastro ao crédito em 3 passos
+    <section id="como-funciona" className="bg-background-dark-secondary py-24 lg:py-32 overflow-hidden">
+      <div 
+        className="container mx-auto px-6 lg:px-8"
+        style={{ transform: `translateY(${parallaxOffset * -0.15}px)` }}
+      >
+        <div className="max-w-2xl mb-16">
+          <h2 className="font-sora text-foreground-light text-3xl md:text-4xl font-semibold mb-4">
+            Crédito em 3 passos
           </h2>
+          <p className="text-foreground-light/60">
+            Simples, rápido e sem burocracia.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {steps.map((step, index) => (
-            <div key={index} className="relative">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 rounded-xl bg-primary/20 flex items-center justify-center">
-                    <step.icon className="w-8 h-8 text-primary" />
-                  </div>
-                </div>
-                <div>
-                  <span className="text-primary font-semibold text-sm mb-2 block">
-                    Passo {step.number}
-                  </span>
-                  <h3 className="text-foreground-light text-xl font-semibold mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-foreground-light/60 leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
+            <div 
+              key={index} 
+              className="p-8 rounded-3xl bg-background-dark/50 border border-foreground-light/5"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center mb-6">
+                <step.icon className="w-7 h-7 text-primary" />
               </div>
+              <span className="text-primary font-sora font-medium text-sm mb-3 block">
+                Passo {step.number}
+              </span>
+              <h3 className="font-sora text-foreground-light text-xl font-semibold mb-2">
+                {step.title}
+              </h3>
+              <p className="text-foreground-light/50 text-sm">
+                {step.description}
+              </p>
             </div>
           ))}
         </div>
 
         <div className="text-center">
           <Link to="/contato">
-            <Button variant="hero" size="xl">
+            <Button variant="hero" size="xl" className="rounded-full">
               Iniciar Cadastro
             </Button>
           </Link>

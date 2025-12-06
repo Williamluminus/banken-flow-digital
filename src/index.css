@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -38,7 +36,7 @@
     --border: 216 20% 90%;
     --input: 216 20% 90%;
     --ring: 243 78% 49%;
-    --radius: 0.5rem;
+    --radius: 1rem;
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;

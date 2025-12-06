@@ -11,7 +11,7 @@ const Header = () => {
     { name: "Home", href: "/" },
     { name: "Soluções", href: "/#solucoes" },
     { name: "Como Funciona", href: "/#como-funciona" },
-    { name: "Sobre Nós", href: "/#sobre" },
+    { name: "Sobre", href: "/#sobre" },
     { name: "Contato", href: "/contato" },
   ];
 
@@ -21,7 +21,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background-dark/95 backdrop-blur-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background-dark/90 backdrop-blur-md">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -33,7 +33,7 @@ const Header = () => {
                 <div className="w-3 h-[3px] bg-primary rounded-full" />
               </div>
             </div>
-            <span className="text-foreground-light font-outfit font-bold text-2xl tracking-tight">
+            <span className="text-foreground-light font-sora font-semibold text-xl tracking-tight">
               Banken
             </span>
           </Link>
@@ -47,7 +47,7 @@ const Header = () => {
                 className={`text-sm font-medium transition-colors ${
                   isActive(link.href)
                     ? "text-foreground-light"
-                    : "text-foreground-light/60 hover:text-foreground-light"
+                    : "text-foreground-light/50 hover:text-foreground-light"
                 }`}
               >
                 {link.name}
@@ -58,8 +58,8 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Link to="/contato">
-              <Button variant="hero" size="default">
-                Simular Antecipação
+              <Button variant="hero" size="default" className="rounded-full">
+                Simular
               </Button>
             </Link>
           </div>
@@ -81,14 +81,14 @@ const Header = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="text-foreground-light/80 hover:text-foreground-light text-base font-medium"
+                  className="text-foreground-light/70 hover:text-foreground-light text-base font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
                 </Link>
               ))}
               <Link to="/contato" onClick={() => setIsMenuOpen(false)}>
-                <Button variant="hero" className="w-full mt-4">
+                <Button variant="hero" className="w-full mt-4 rounded-full">
                   Simular Antecipação
                 </Button>
               </Link>
