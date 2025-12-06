@@ -10,11 +10,11 @@ const AboutSection = () => {
         style={{ transform: `translateY(${parallaxOffset * -0.1}px)` }}
       >
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-sora text-foreground text-3xl md:text-4xl font-semibold mb-8">
+          <h2 className="font-merriweather text-foreground text-3xl md:text-4xl font-bold mb-8">
             O parceiro que faltava
           </h2>
           
-          <p className="text-foreground-muted text-lg leading-relaxed">
+          <p className="font-nunito text-foreground-muted text-lg leading-relaxed">
             Não somos apenas uma factoring. Somos o motor financeiro do seu negócio. 
             Agilidade de fintech, segurança de quem tem mercado. 
             Na Banken, você fala com quem decide.

@@ -38,10 +38,10 @@ const SolutionsSection = () => {
         style={{ transform: `translateY(${parallaxOffset * -0.1}px)` }}
       >
         <div className="max-w-2xl mb-16">
-          <h2 className="font-sora text-foreground text-3xl md:text-4xl font-semibold mb-4">
+          <h2 className="font-merriweather text-foreground text-3xl md:text-4xl font-bold mb-4">
             Soluções para crescer
           </h2>
-          <p className="text-foreground-muted">
+          <p className="font-nunito text-foreground-muted">
             Tudo que sua empresa precisa para ter fluxo de caixa saudável.
           </p>
         </div>
@@ -52,11 +52,11 @@ const SolutionsSection = () => {
               key={index}
               className="group p-8 rounded-3xl border border-border bg-background hover:bg-background-light-secondary transition-all duration-300"
             >
-              <solution.icon className="w-8 h-8 text-primary mb-6" strokeWidth={1.5} />
-              <h3 className="font-sora text-foreground text-xl font-semibold mb-3">
+              <solution.icon className="w-8 h-8 text-primary mb-6" strokeWidth={1} />
+              <h3 className="font-merriweather text-foreground text-xl font-bold mb-3">
                 {solution.title}
               </h3>
-              <p className="text-foreground-muted text-sm leading-relaxed">
+              <p className="font-nunito text-foreground-muted text-sm leading-relaxed">
                 {solution.description}
               </p>
             </div>

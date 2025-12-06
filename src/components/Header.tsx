@@ -33,7 +33,7 @@ const Header = () => {
                 <div className="w-3 h-[3px] bg-primary rounded-full" />
               </div>
             </div>
-            <span className="text-foreground-light font-sora font-semibold text-xl tracking-tight">
+            <span className="text-foreground-light font-merriweather font-bold text-xl tracking-tight">
               Banken
             </span>
           </Link>
@@ -44,7 +44,7 @@ const Header = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className={`text-sm font-medium transition-colors ${
+                className={`font-nunito text-sm font-medium transition-colors ${
                   isActive(link.href)
                     ? "text-foreground-light"
                     : "text-foreground-light/50 hover:text-foreground-light"
@@ -81,7 +81,7 @@ const Header = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="text-foreground-light/70 hover:text-foreground-light text-base font-medium"
+                  className="font-nunito text-foreground-light/70 hover:text-foreground-light text-base font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}

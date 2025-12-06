@@ -34,10 +34,10 @@ const HowItWorksSection = () => {
         style={{ transform: `translateY(${parallaxOffset * -0.15}px)` }}
       >
         <div className="max-w-2xl mb-16">
-          <h2 className="font-sora text-foreground-light text-3xl md:text-4xl font-semibold mb-4">
+          <h2 className="font-merriweather text-foreground-light text-3xl md:text-4xl font-bold mb-4">
             Crédito em 3 passos
           </h2>
-          <p className="text-foreground-light/60">
+          <p className="font-nunito text-foreground-light/60">
             Simples, rápido e sem burocracia.
           </p>
         </div>
@@ -48,16 +48,14 @@ const HowItWorksSection = () => {
               key={index} 
               className="p-8 rounded-3xl bg-background-dark/50 border border-foreground-light/5"
             >
-              <div className="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center mb-6">
-                <step.icon className="w-7 h-7 text-primary" />
-              </div>
-              <span className="text-primary font-sora font-medium text-sm mb-3 block">
+              <step.icon className="w-8 h-8 text-primary mb-6" strokeWidth={1} />
+              <span className="font-nunito text-primary font-medium text-sm mb-3 block">
                 Passo {step.number}
               </span>
-              <h3 className="font-sora text-foreground-light text-xl font-semibold mb-2">
+              <h3 className="font-merriweather text-foreground-light text-xl font-bold mb-2">
                 {step.title}
               </h3>
-              <p className="text-foreground-light/50 text-sm">
+              <p className="font-nunito text-foreground-light/50 text-sm">
                 {step.description}
               </p>
             </div>

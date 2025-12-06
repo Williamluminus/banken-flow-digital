@@ -21,7 +21,7 @@ const Footer = () => {
                 <div className="w-3 h-[3px] bg-primary rounded-full" />
               </div>
             </div>
-            <span className="text-foreground-light font-sora font-semibold text-xl tracking-tight">
+            <span className="text-foreground-light font-merriweather font-bold text-xl tracking-tight">
               Banken
             </span>
           </Link>
@@ -32,7 +32,7 @@ const Footer = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-foreground-light/50 hover:text-foreground-light text-sm transition-colors"
+                className="font-nunito text-foreground-light/50 hover:text-foreground-light text-sm transition-colors"
               >
                 {link.name}
               </Link>
@@ -42,7 +42,7 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="pt-8 border-t border-foreground-light/10">
-          <p className="text-foreground-light/30 text-sm text-center">
+          <p className="font-nunito text-foreground-light/30 text-sm text-center">
             © 2025 Banken Fomento Mercantil
           </p>
         </div>
