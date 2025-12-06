@@ -2,7 +2,7 @@ import { useParallax } from "@/hooks/useParallax";
 import heroImage from "@/assets/hero-handshake.jpg";
 
 const ImageHeroSection = () => {
-  const parallaxOffset = useParallax(0.3);
+  const parallaxOffset = useParallax(0.5);
   
   return (
     <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
