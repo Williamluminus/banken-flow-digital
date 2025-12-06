@@ -10,32 +10,32 @@ const TrustSection = () => {
     {
       icon: Clock,
       value: "Dinheiro Rápido",
-      label: "Crédito na conta no mesmo dia da aprovação",
+      label: "Crédito no mesmo dia",
     },
     {
       icon: Users,
       value: "Atendimento Humano",
-      label: "Fale com especialistas reais",
+      label: "Fale com especialistas",
     },
   ];
 
   return (
-    <section className="bg-background-light-secondary py-16 lg:py-20">
+    <section className="bg-background-light-secondary py-12 lg:py-16">
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-16">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="flex items-start gap-4"
+              className="flex items-center gap-4 px-6 py-4 rounded-full bg-background"
             >
-              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                <stat.icon className="w-6 h-6 text-primary" />
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <stat.icon className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="text-foreground font-semibold text-lg mb-1">
+                <p className="text-foreground font-sora font-semibold text-sm">
                   {stat.value}
                 </p>
-                <p className="text-foreground-muted text-sm">
+                <p className="text-foreground-muted text-xs">
                   {stat.label}
                 </p>
               </div>

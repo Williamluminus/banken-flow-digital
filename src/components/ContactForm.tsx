@@ -33,9 +33,9 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="name" className="text-foreground">
+          <Label htmlFor="name" className="text-foreground text-sm">
             Nome Completo
           </Label>
           <Input
@@ -43,12 +43,12 @@ const ContactForm = () => {
             name="name"
             required
             placeholder="Seu nome"
-            className="bg-background border-border"
+            className="bg-background border-border rounded-xl h-12"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="company" className="text-foreground">
+          <Label htmlFor="company" className="text-foreground text-sm">
             Nome da Empresa
           </Label>
           <Input
@@ -56,15 +56,15 @@ const ContactForm = () => {
             name="company"
             required
             placeholder="Sua empresa"
-            className="bg-background border-border"
+            className="bg-background border-border rounded-xl h-12"
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="email" className="text-foreground">
-            E-mail Corporativo
+          <Label htmlFor="email" className="text-foreground text-sm">
+            E-mail
           </Label>
           <Input
             id="email"
@@ -72,13 +72,13 @@ const ContactForm = () => {
             type="email"
             required
             placeholder="email@empresa.com"
-            className="bg-background border-border"
+            className="bg-background border-border rounded-xl h-12"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="phone" className="text-foreground">
-            Telefone / WhatsApp
+          <Label htmlFor="phone" className="text-foreground text-sm">
+            Telefone
           </Label>
           <Input
             id="phone"
@@ -86,21 +86,21 @@ const ContactForm = () => {
             type="tel"
             required
             placeholder="(11) 99999-9999"
-            className="bg-background border-border"
+            className="bg-background border-border rounded-xl h-12"
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="revenue" className="text-foreground">
-            Faturamento Médio Mensal
+          <Label htmlFor="revenue" className="text-foreground text-sm">
+            Faturamento Mensal
           </Label>
           <Select name="revenue" required>
-            <SelectTrigger className="bg-background border-border">
+            <SelectTrigger className="bg-background border-border rounded-xl h-12">
               <SelectValue placeholder="Selecione" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="rounded-xl">
               <SelectItem value="ate-50k">Até R$ 50 mil</SelectItem>
               <SelectItem value="50k-200k">R$ 50 mil a R$ 200 mil</SelectItem>
               <SelectItem value="acima-200k">Acima de R$ 200 mil</SelectItem>
@@ -109,14 +109,14 @@ const ContactForm = () => {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="service" className="text-foreground">
+          <Label htmlFor="service" className="text-foreground text-sm">
             Como podemos ajudar?
           </Label>
           <Select name="service" required>
-            <SelectTrigger className="bg-background border-border">
+            <SelectTrigger className="bg-background border-border rounded-xl h-12">
               <SelectValue placeholder="Selecione" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="rounded-xl">
               <SelectItem value="antecipacao">Antecipação de Notas</SelectItem>
               <SelectItem value="gestao">Gestão Financeira</SelectItem>
               <SelectItem value="parceria">Parceria</SelectItem>
@@ -130,7 +130,7 @@ const ContactForm = () => {
         type="submit"
         variant="hero"
         size="xl"
-        className="w-full"
+        className="w-full rounded-full"
         disabled={isSubmitting}
       >
         {isSubmitting ? "Enviando..." : "Falar com Especialista"}
