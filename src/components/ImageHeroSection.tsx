@@ -2,15 +2,21 @@ import { useParallax } from "@/hooks/useParallax";
 import heroImage from "@/assets/hero-handshake.jpg";
 
 const ImageHeroSection = () => {
-  const parallaxOffset = useParallax(0.5);
+  const parallaxOffset = useParallax(0.3);
+  
+  // Limita o parallax para não mostrar o fundo
+  const clampedOffset = Math.min(Math.max(parallaxOffset * 0.3, -50), 100);
   
   return (
     <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
       <img
         src={heroImage}
         alt="Parceria empresarial - aperto de mãos simbolizando confiança"
-        className="absolute inset-0 w-full h-[140%] object-cover -top-[20%]"
-        style={{ transform: `translateY(${parallaxOffset * 0.4}px)` }}
+        className="absolute inset-0 w-full h-[130%] object-cover"
+        style={{ 
+          top: '-15%',
+          transform: `translateY(${clampedOffset}px)` 
+        }}
       />
       <div className="absolute inset-0 bg-background-dark/40" />
       <div className="relative z-10 h-full flex items-center justify-center">
