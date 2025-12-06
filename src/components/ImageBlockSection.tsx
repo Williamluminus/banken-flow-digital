@@ -10,7 +10,7 @@ interface ImageBlockProps {
 }
 
 const ImageBlock = ({ image, alt, text, textPosition = "center" }: ImageBlockProps) => {
-  const parallaxOffset = useParallax(0.3);
+  const parallaxOffset = useParallax(0.5);
   
   const textAlignClass = {
     left: "text-left items-start",
@@ -52,7 +52,7 @@ export const ImageBlockSecond = () => (
     image={portrait2}
     alt="Profissional de negócios - liderança e confiança"
     text="O Fôlego Financeiro da Sua Empresa Chega Hoje."
-    textPosition="right"
+    textPosition="left"
   />
 );
 
