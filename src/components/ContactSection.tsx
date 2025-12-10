@@ -10,15 +10,10 @@ const ContactSection = () => {
             <h2 className="font-merriweather text-foreground-light text-3xl md:text-4xl font-bold mb-6">
               Vamos acelerar o seu negócio?
             </h2>
-            <p className="font-nunito text-foreground-light/60 text-lg leading-relaxed mb-8">
+            <p className="font-nunito text-foreground-light/60 text-lg leading-relaxed">
               Nossa equipe está pronta para analisar sua necessidade 
               e desenhar a melhor operação para sua empresa.
             </p>
-            <div className="space-y-4 font-nunito text-foreground-light/50 text-sm">
-              <p>(11) 4208-3432</p>
-              <p>contato@banken.com.br</p>
-              <p>Av. Cauaxi, 293, 28º andar, Alphaville<br />Barueri SP - CEP 06454-020</p>
-            </div>
           </div>
 
           {/* Right Column - Form */}
