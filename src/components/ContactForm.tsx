@@ -36,16 +36,48 @@ const ContactForm = () => {
     setPhone(formatted);
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
+    const company = formData.get("company") as string;
+    const email = formData.get("email") as string;
+    const phoneValue = formData.get("phone") as string;
+    const revenue = formData.get("revenue") as string;
+    const service = formData.get("service") as string;
+
+    const revenueLabels: Record<string, string> = {
+      "ate-50k": "Até R$ 50 mil",
+      "50k-200k": "R$ 50 mil a R$ 200 mil",
+      "acima-200k": "Acima de R$ 200 mil",
+    };
+
+    const serviceLabels: Record<string, string> = {
+      "antecipacao": "Antecipação de Notas",
+      "gestao": "Gestão Financeira",
+      "parceria": "Parceria",
+      "outros": "Outros",
+    };
+
+    const message = `Olá! Tenho interesse em conhecer a Banken.
+
+*Dados do contato:*
+• Nome: ${name}
+• Empresa: ${company}
+• E-mail: ${email}
+• Telefone: ${phoneValue}
+• Faturamento: ${revenueLabels[revenue] || revenue}
+• Interesse: ${serviceLabels[service] || service}`;
+
+    const whatsappUrl = `https://wa.me/5511990054114?text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, "_blank");
 
     toast({
-      title: "Mensagem enviada!",
-      description: "Nossa equipe entrará em contato em breve.",
+      title: "Redirecionando para WhatsApp",
+      description: "Continue a conversa com nosso time.",
     });
 
     setIsSubmitting(false);
