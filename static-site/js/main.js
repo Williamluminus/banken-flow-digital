@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ========================================
-  // Form Submission
+  // Form Submission - WhatsApp Redirect
   // ========================================
   const contactForm = document.getElementById('contact-form');
   
@@ -133,20 +133,41 @@ document.addEventListener('DOMContentLoaded', function() {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      const submitBtn = this.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
+      const formData = new FormData(this);
+      const name = formData.get('name') || '';
+      const company = formData.get('company') || '';
+      const email = formData.get('email') || '';
+      const phone = formData.get('phone') || '';
+      const revenue = formData.get('revenue') || '';
+      const service = formData.get('service') || '';
+
+      const revenueLabels = {
+        'ate-50k': 'Até R$ 50 mil',
+        '50k-200k': 'R$ 50 mil a R$ 200 mil',
+        'acima-200k': 'Acima de R$ 200 mil'
+      };
+
+      const serviceLabels = {
+        'antecipacao': 'Antecipação de Notas',
+        'gestao': 'Gestão Financeira',
+        'parceria': 'Parceria',
+        'outros': 'Outros'
+      };
+
+      const message = 'Olá! Tenho interesse em conhecer a Banken.\n\n' +
+        '*Dados do contato:*\n' +
+        '• Nome: ' + name + '\n' +
+        '• Empresa: ' + company + '\n' +
+        '• E-mail: ' + email + '\n' +
+        '• Telefone: ' + phone + '\n' +
+        '• Faturamento: ' + (revenueLabels[revenue] || revenue) + '\n' +
+        '• Interesse: ' + (serviceLabels[service] || service);
+
+      const whatsappUrl = 'https://wa.me/5511990054114?text=' + encodeURIComponent(message);
       
-      // Show loading state
-      submitBtn.textContent = 'Enviando...';
-      submitBtn.disabled = true;
+      window.open(whatsappUrl, '_blank');
       
-      // Simulate form submission
-      setTimeout(function() {
-        alert('Mensagem enviada! Nossa equipe entrará em contato em breve.');
-        contactForm.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-      }, 1000);
+      contactForm.reset();
     });
   }
 
